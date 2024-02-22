@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Blog1-Palmer Penguins/index.html",
+      "/posts/Blog1-PalmerPenguins.html",
       "/posts/new-test-post/index.html",
       "/posts/example-blog-post/index.html"
     ]
