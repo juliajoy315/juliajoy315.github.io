@@ -4,19 +4,34 @@
     "href": "about.html",
     "title": "About",
     "section": "",
+<<<<<<< HEAD
     "text": "Hi! My name is Julia Joy."
   },
   {
     "objectID": "posts/new-test-post/index.html",
     "href": "posts/new-test-post/index.html",
     "title": "Second Post",
+=======
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/new-new-test-post/index.html",
+    "href": "posts/new-new-test-post/index.html",
+    "title": "Timnit Gebru",
+>>>>>>> 218c1e36ffee11b1055f7df7eceb63aa0efde58c
     "section": "",
     "text": "from source import Perceptron\np = Perceptron()\n\nI did it!!\nnot implemented\nThis is an example of the blog posts that you’ll submit as your primary form of learning demonstration in CSCI 0451. I created this post by modifying the file posts/example-blog-post/index.ipynb in VSCode. You can also use JupyterLab for this editing if you prefer. Finally, it is possible to write blog posts without using notebooks by writing .qmd files, as illustrated here."
   },
   {
+<<<<<<< HEAD
     "objectID": "posts/new-test-post/index.html#math",
     "href": "posts/new-test-post/index.html#math",
     "title": "Second Post",
+=======
+    "objectID": "posts/new-new-test-post/index.html#math",
+    "href": "posts/new-new-test-post/index.html#math",
+    "title": "Timnit Gebru",
+>>>>>>> 218c1e36ffee11b1055f7df7eceb63aa0efde58c
     "section": "Math",
     "text": "Math\nIn addition to regular text using the Markdown specification, you can also write mathematics, enclosed between dollar signs. The syntax for writing math is very similar to the syntax used in the \\(\\LaTeX\\) markup language. For example, $f(x) \\approx y$ renders to \\(f(x) \\approx y\\). To place complex mathematical expressions on their own lines, use double dollar signs. For example, the expression\n$$\\mathcal{L}(a, b) = \\sum_{i = 1}^n (ax_i + b - y_i)^2$$\nrenders to:\n\\[\\mathcal{L}(a, b) = \\sum_{i = 1}^n (ax_i + b - y_i)^2\\;.\\]\nBehind the scenes, math is powered by the MathJax engine. For more on how to write math, check this handy tutorial and quick reference."
   },
@@ -35,6 +50,7 @@
     "text": "Math\nIn addition to regular text using the Markdown specification, you can also write mathematics, enclosed between dollar signs. The syntax for writing math is very similar to the syntax used in the \\(\\LaTeX\\) markup language. For example, $f(x) \\approx y$ renders to \\(f(x) \\approx y\\). To place complex mathematical expressions on their own lines, use double dollar signs. For example, the expression\n$$\\mathcal{L}(a, b) = \\sum_{i = 1}^n (ax_i + b - y_i)^2$$\nrenders to:\n\\[\\mathcal{L}(a, b) = \\sum_{i = 1}^n (ax_i + b - y_i)^2\\;.\\]\nBehind the scenes, math is powered by the MathJax engine. For more on how to write math, check this handy tutorial and quick reference."
   },
   {
+<<<<<<< HEAD
     "objectID": "posts/Blog1-Palmer Penguins/index.html",
     "href": "posts/Blog1-Palmer Penguins/index.html",
     "title": "Palmer Penguins",
@@ -47,6 +63,20 @@
     "title": "Palmer Penguins",
     "section": "Figure Findings",
     "text": "Figure Findings\nVarious summary tables and visualizations were tested, aiming to determine the most effective presentation of the Palmer Penguins dataset. Initially different grouping criteria and variables were considered, such as species, island, sex, clutch completion, culmen depth and length, body mass, and flipper length. Ultimately I decided to come back and choose the summary table and visualizations that reflected the variables I later found to have the highest predictive accuracy: Culmen Depth, Culmen Length, and Clutch Completion. Summary tables were created using pandas.groupby().aggregate. From the summary tables we observe that among different species, Culmen Length varies to a larger degree than Culmen Depth does. Upon a glance of the summary table, it is hard to see if clutch completion and culmen characteristics are correlated. In the first visualization on the right, we can see the penguins depicted by virtue of the respective culmen length and depth, colored by the Clutch Completion. We observe a relatively uniform distribution of clutch completion- there does not seem to be an immediate observable relationship between the three. My next visualization shows the same axes of Culmen Depth and Length, this time however colored by species. In this figure, we notice clear species groupings, corresponding to their Culmen Depth-Length relationship."
+=======
+    "objectID": "posts/new-test-post/index.html",
+    "href": "posts/new-test-post/index.html",
+    "title": "Second Post",
+    "section": "",
+    "text": "This is an example of the blog posts that you’ll submit as your primary form of learning demonstration in CSCI 0451. I created this post by modifying the file posts/example-blog-post/index.ipynb in VSCode. You can also use JupyterLab for this editing if you prefer. Finally, it is possible to write blog posts without using notebooks by writing .qmd files, as illustrated here."
+  },
+  {
+    "objectID": "posts/new-test-post/index.html#math",
+    "href": "posts/new-test-post/index.html#math",
+    "title": "Second Post",
+    "section": "Math",
+    "text": "Math\nIn addition to regular text using the Markdown specification, you can also write mathematics, enclosed between dollar signs. The syntax for writing math is very similar to the syntax used in the \\(\\LaTeX\\) markup language. For example, $f(x) \\approx y$ renders to \\(f(x) \\approx y\\). To place complex mathematical expressions on their own lines, use double dollar signs. For example, the expression\n$$\\mathcal{L}(a, b) = \\sum_{i = 1}^n (ax_i + b - y_i)^2$$\nrenders to:\n\\[\\mathcal{L}(a, b) = \\sum_{i = 1}^n (ax_i + b - y_i)^2\\;.\\]\nBehind the scenes, math is powered by the MathJax engine. For more on how to write math, check this handy tutorial and quick reference."
+>>>>>>> 218c1e36ffee11b1055f7df7eceb63aa0efde58c
   },
   {
     "objectID": "posts/Blog1-Palmer Penguins/index.html#find-the-best-features-for-prediction",
@@ -60,6 +90,7 @@
     "href": "posts/Blog1-PalmerPenguins.html",
     "title": "Palmer Penguins",
     "section": "",
+<<<<<<< HEAD
     "text": "The aim of this exploration of the Palmer Penguins dataset is to gain insight into the dataset through predictive classification. This exploration involves constructing visualizations of the data using seaborn and creating informative summary tables using pandas. By testing various combinations of models through a reproducible process, three key features are able to be identified. Out of the three features, I found that the combination of 1 qualitative feature: Clutch Completion, and 2 quantitative features: Culmen Length and Culmen Depth, were the most effective to reach 100% testing classification accuracy using a Decision Tree Model. The evaluation phase provides a visual representation of the models behavior by showing the decision regions of the trained decision tree model. Through this process, we gain a comprehensive understanding of the Palmer Penguins dataset and demonstrate the effectiveness of a trained decision tree model in accurately classifying Palmer Penguin data.\n\nimport pandas as pd\n\ntrain_url = \"https://raw.githubusercontent.com/PhilChodrow/ml-notes/main/data/palmer-penguins/train.csv\"\ntrain = pd.read_csv(train_url)\n\nWe can take a peek at the data to get a better idea of where to start.\n\ntrain.head()\n\n\n\n\n\n\n\n\nstudyName\nSample Number\nSpecies\nRegion\nIsland\nStage\nIndividual ID\nClutch Completion\nDate Egg\nCulmen Length (mm)\nCulmen Depth (mm)\nFlipper Length (mm)\nBody Mass (g)\nSex\nDelta 15 N (o/oo)\nDelta 13 C (o/oo)\nComments\n\n\n\n\n0\nPAL0809\n31\nChinstrap penguin (Pygoscelis antarctica)\nAnvers\nDream\nAdult, 1 Egg Stage\nN63A1\nYes\n11/24/08\n40.9\n16.6\n187.0\n3200.0\nFEMALE\n9.08458\n-24.54903\nNaN\n\n\n1\nPAL0809\n41\nChinstrap penguin (Pygoscelis antarctica)\nAnvers\nDream\nAdult, 1 Egg Stage\nN74A1\nYes\n11/24/08\n49.0\n19.5\n210.0\n3950.0\nMALE\n9.53262\n-24.66867\nNaN\n\n\n2\nPAL0708\n4\nGentoo penguin (Pygoscelis papua)\nAnvers\nBiscoe\nAdult, 1 Egg Stage\nN32A2\nYes\n11/27/07\n50.0\n15.2\n218.0\n5700.0\nMALE\n8.25540\n-25.40075\nNaN\n\n\n3\nPAL0708\n15\nGentoo penguin (Pygoscelis papua)\nAnvers\nBiscoe\nAdult, 1 Egg Stage\nN38A1\nYes\n12/3/07\n45.8\n14.6\n210.0\n4200.0\nFEMALE\n7.79958\n-25.62618\nNaN\n\n\n4\nPAL0809\n34\nChinstrap penguin (Pygoscelis antarctica)\nAnvers\nDream\nAdult, 1 Egg Stage\nN65A2\nYes\n11/24/08\n51.0\n18.8\n203.0\n4100.0\nMALE\n9.23196\n-24.17282\nNaN"
   },
   {
@@ -82,5 +113,8 @@
     "title": "My Awesome CSCI 0451 Blog",
     "section": "",
     "text": "Palmer Penguins\n\n\n\n\n\nBlog Post 1: Palmer Penguins\n\n\n\n\n\nFeb 18, 2024\n\n\nJulia Joy\n\n\n\n\n\n\n\n\n\n\n\n\nPalmer Penguins\n\n\n\n\n\nBlog Post 1: Palmer Penguins\n\n\n\n\n\nFeb 18, 2024\n\n\nJulia Joy\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Post\n\n\n\n\n\nA new blog post that I just made!\n\n\n\n\n\nMar 10, 2023\n\n\nPhil Chodrow\n\n\n\n\n\n\n\n\n\n\n\n\nHello Blog\n\n\n\n\n\nAn example blog post illustrating the key techniques you’ll need to demonstrate your learning in CSCI 0451.\n\n\n\n\n\nJan 10, 2023\n\n\nPhil Chodrow\n\n\n\n\n\n\nNo matching items"
+=======
+    "text": "Second Post\n\n\n\n\n\nA new blog post that I just made!\n\n\n\n\n\n\nMar 10, 2023\n\n\nPhil Chodrow\n\n\n\n\n\n\n  \n\n\n\n\nTimnit Gebru\n\n\n\n\n\nA new blog post that I just made!\n\n\n\n\n\n\nMar 10, 2023\n\n\nPhil Chodrow\n\n\n\n\n\n\n  \n\n\n\n\nHello Blog\n\n\n\n\n\nAn example blog post illustrating the key techniques you’ll need to demonstrate your learning in CSCI 0451.\n\n\n\n\n\n\nJan 10, 2023\n\n\nPhil Chodrow\n\n\n\n\n\n\nNo matching items"
+>>>>>>> 218c1e36ffee11b1055f7df7eceb63aa0efde58c
   }
 ]
