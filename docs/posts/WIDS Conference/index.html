@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Phil Chodrow">
-<meta name="dcterms.date" content="2023-01-10">
-<meta name="description" content="An example blog post illustrating the key techniques you’ll need to demonstrate your learning in CSCI 0451.">
+<meta name="author" content="Julia Joy">
+<meta name="dcterms.date" content="2024-03-04">
+<meta name="description" content="Blog Post 3: Refelcting on and contextualizing the learning obtained from the Women in Data Science Conference">
 
-<title>My Awesome CSCI 0451 Blog - Hello Blog</title>
+<title>My Awesome CSCI 0451 Blog - WiDS Conference at Middlebury College</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -122,35 +88,6 @@ background-size: cover;
       }
 </style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -197,10 +134,10 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Hello Blog</h1>
+      <h1 class="title">WiDS Conference at Middlebury College</h1>
                   <div>
         <div class="description">
-          An example blog post illustrating the key techniques you’ll need to demonstrate your learning in CSCI 0451.
+          Blog Post 3: Refelcting on and contextualizing the learning obtained from the Women in Data Science Conference
         </div>
       </div>
                 </div>
@@ -212,14 +149,14 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Phil Chodrow </p>
+               <p>Julia Joy </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 10, 2023</p>
+        <p class="date">March 4, 2024</p>
       </div>
     </div>
     
@@ -238,70 +175,92 @@ window.Quarto = {
 
 
 
-<div id="cell-1" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> source <span class="im">import</span> Perceptron</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>This is an example of the blog posts that you’ll submit as your primary form of learning demonstration in CSCI 0451. I created this post by modifying the file <code>posts/example-blog-post/index.ipynb</code> in VSCode. You can also use JupyterLab for this editing if you prefer. Finally, it is possible to write blog posts without using notebooks by writing <code>.qmd</code> files, as illustrated <a href="https://quarto.org/docs/get-started/hello/vscode.html">here</a>.</p>
-<section id="frontmatter" class="level1">
-<h1>Frontmatter</h1>
-<p>Your notebook needs to contain some metadata: things like the title, author, date, etc. You specify this in a <code>raw</code> cell at the very beginning of the notebook. In this notebook, the contents of this cell is:</p>
-<pre><code>---
-title: Hello Blog
-author: Phil Chodrow
-date: '2023-01-10'
-image: "image.jpg"
-description: "An example blog post illustrating the key techniques you'll need to demonstrate your learning in CSCI 0451."
-format: html
----</code></pre>
-<p>Frontmatter can be fiddly (it’s sensitive to spaces, for example), and so the best approach is usually to copy and paste it from previous blog posts, modifying it as appropriate.</p>
+<section id="abstract" class="level3">
+<h3 class="anchored" data-anchor-id="abstract">Abstract:</h3>
 </section>
-<section id="running-python-code" class="level1">
-<h1>Running Python Code</h1>
-<p>To run Python code, place your code in a Python code block inside your notebook. You can run the code block inside VSCode (or JupyterLab) using the keyboard shortcut <code>ctrl + Enter</code>. You’ll see the result of your computation below the code, including the value of the most recent statement.</p>
-<div id="cell-3" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">"CSCI"</span> <span class="op">+</span> <span class="st">" 0451"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>'CSCI 0451'</code></pre>
-</div>
-</div>
-<p>We’ll have lots of opportunities to make data visualizations in this course. These also display inside the notebook, and get converted into your blog post:</p>
-<div id="cell-5" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span><span class="op">*</span>np.pi, <span class="dv">1001</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.sin(x)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.plot(x, y)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>xlab <span class="op">=</span> plt.xlabel(<span class="st">"x"</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>ylab <span class="op">=</span> plt.ylabel(<span class="st">"y"</span>)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>title <span class="op">=</span> plt.gca().<span class="bu">set</span>(title <span class="op">=</span> <span class="st">"My Fancy Plot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Another thing we’ll often do is implement an algorithm in a source file (i.e.&nbsp;a <code>.py</code> file) and then <em>use</em> it in a notebook. To do this, just place the <code>.py</code> file in the same directory as the notebook. For example, the file <code>source.py</code> in the same directory contains a custom function (which prints a message). I can use like this:</p>
-<div id="cell-7" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> source </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>source.my_custom_function()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>I implemented this function in the file source.py</code></pre>
-</div>
-</div>
+<section id="part-1-why-spotlight-women-in-data-science" class="level3">
+<h3 class="anchored" data-anchor-id="part-1-why-spotlight-women-in-data-science">Part 1: Why Spotlight Women in Data Science?</h3>
 </section>
-<section id="markdown" class="level1">
-<h1>Markdown</h1>
-<p>You can use Markdown syntax to write text in Markdown cells. Markdown allows you to create simple text formatting like bullets, italics, and section headers. The Quarto <a href="https://quarto.org/docs/authoring/markdown-basics.html">description of markdown basics</a> has everything you need to get started.</p>
-<section id="math" class="level2">
-<h2 class="anchored" data-anchor-id="math">Math</h2>
-<p>In addition to regular text using the Markdown specification, you can also write mathematics, enclosed between dollar signs. The syntax for writing math is very similar to the syntax used in the <span class="math inline">\(\LaTeX\)</span> markup language. For example, <code>$f(x) \approx y$</code> renders to <span class="math inline">\(f(x) \approx y\)</span>. To place complex mathematical expressions on their own lines, use double dollar signs. For example, the expression</p>
-<p><code>$$\mathcal{L}(a, b) = \sum_{i = 1}^n (ax_i + b - y_i)^2$$</code></p>
-<p>renders to:</p>
-<p><span class="math display">\[\mathcal{L}(a, b) = \sum_{i = 1}^n (ax_i + b - y_i)^2\;.\]</span></p>
-<p>Behind the scenes, math is powered by the MathJax engine. For more on how to write math, check this handy <a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference">tutorial and quick reference</a>.</p>
+<section id="why-is-it-a-problem-that-women-are-underrepresented-in-computing-math-and-engineering-for-whom-is-it-a-problem" class="level1">
+<h1>Why is it a problem that women are underrepresented in computing, math, and engineering? For whom is it a problem?</h1>
+<p>Gender biases can create obstacles not only for women in technical workplaces but also for the men who work with them. In one study of equally performing teams working on a male-typed task, teams with a higher percentage of women rated both their female and male peers’ work more negatively overall and expressed less desire to work together in the future (West et al., 2012). Another study found that in a typically male field, people rated their male colleagues as less masculine and less deserving of workplace success if they had female supervisors (Brescoll, Uhlmann et al., 2012). This research sheds light on the magnitude of the problem of gender bias in predominantly male fields and perhaps points to one mechanism by which it is maintained. If men’s work is devalued when men work with women, men might take steps to avoid working with women, exacerbating the challenges facing women in male-dominated fields. While diversity has demonstrated benefits, there are real challenges to achieving it.</p>
+<p>Diversity in the workforce contributes to creativity, productivity, and innovation. Women’s experiences—along with men’s experiences—should inform and guide the direction of engineering and technical innovation The United States simply can’t afford to ignore the perspectives of half the population in future engineering and technical designs. lose out on these high-quality job opportunities that account for more than 80% of stem workforce more likely to choose a male candidate over an identical female candidate for a hypothetical job opening at a lab. Both female and male scientists also offered a higher salary to the male candidate. Gender biases affect not only how we view and treat others but also how we view ourselves and what actions we take as a result</p>
+</section>
+<section id="which-of-the-barriers-and-unequal-challenges-described-in-the-section-why-so-few-can-be-eroded-by-events-that-spotlight-the-achievement-of-women-in-stem" class="level1">
+<h1>Which of the barriers and unequal challenges described in the section “Why So Few?” can be eroded by events that spotlight the achievement of women in STEM?</h1>
+<p>The section “Why so Few?” outlines various barriers and unequal challenges women face in the STEM field, such as sense of belonging, stereotypes and stereotype threat, challenging academic workspaces, as well as isolation. Women may face negative impacts such as experiencing difficultly balancing expected gendered home responsibilities and the culture of overwork, feel deincentivized by the engineering culture of disengagement as studies show women are more likely than men to express a preference for work with a clear social purpose (Konrad et al., 2000), or feel isolated as significant portion of women reported feeling as if they lacked role models and mentors and did not agree with the statement that “it is safe to speak up most of the time”. While not all of these barriers or challenges can be eroded by events that spotlight the achievement of women in STEM, there are a few that can benefit from these events.</p>
+<p>What stood out most notably to me that could be benefited by these events was improving the sense of belonging for women in STEM. Events that spotlight the achievement of women in STEM shows examples of women in a historically male-dominated field, helping combat both internalized and external stereotypes. These events show women that success in STEM is possible, providing role models and mentors, increasing womens sense of belonging and thus hopefully increasing the number of women in STEM.</p>
+<p>BIAS AND STEOROTYPES isolation lacking role models, lacking mentors, Many women report lacking role models and role models (about half reported lacking mentors in a study done by Hewlett et al., 2008).</p>
+<p>In the STEM field, women face gender stereotypes…, that all contribute to a lower sense of belonging than men in the same field.</p>
+<section id="part-2-attending-the-women-in-data-science-conference.-yay" class="level3">
+<h3 class="anchored" data-anchor-id="part-2-attending-the-women-in-data-science-conference.-yay">Part 2: Attending the Women in Data Science Conference. Yay!</h3>
+</section>
+<section id="part-3-report" class="level3">
+<h3 class="anchored" data-anchor-id="part-3-report">Part 3: Report</h3>
+<p>For each of the three lightning talks, please write a paragraph describing who spoke, what they spoke about, their main argument, and what you learned. Please write two paragraphs in which you report on Dr.&nbsp;Brown’s keynote presentation, including her topic, her primary argument, and what you learned.</p>
+</section>
+</section>
+<section id="lightning-talk-1-is-the-united-nations-security-council-a-democratic-institution-musings-and-measures-of-representation-by-professor-amy-yuen" class="level1">
+<h1>Lightning Talk 1: Is the United Nations Security Council a Democratic Institution? Musings and Measures of Representation by Professor Amy Yuen</h1>
+<ul>
+<li>employs game theory and quanititvate analysis</li>
+<li>16 years at middlebury prof of political science</li>
+</ul>
+<p>15 members 5 permanent with veto power, all other elected no veto power</p>
+<p>UN security council voting rules favor the powerful # why do elected memebrs contineu to run for seats? what influence do they have?</p>
+<p>is the council a democratic institution? - the people speak to the government, would like to think international orgs are the same, but by the setup with the veto rules we can see that it is not equal or democractic, this is the structural instutional rules view - representation, who enagages in the council whose issues get attention? - measures resoultions, formal meeting and consulations, presidental statemnets…</p>
+<p>findings</p>
+<p>sponsorship of brought up discussions - bigger chunk sitll peramenet meber but sitting elected is about half of box whisker plot</p>
+<p>who serves on the council most? how long? - can be elected more than once - most frequent is japan, super active and give lots of money, then brazil - what would most and least inclusive councils look like? - tricky bc different amounts of seats in each region - finding of UN past was closer to the more inclusive line</p>
+<p>conclusions: democratic? no representative? could be worse what does this mean for output nad effectiveness? working on it, lots of ways to influence instituions</p>
+</section>
+<section id="lightning-talk-2-beyond-deforestation-monitoring-change-in-tropical-forest-landscapes-by-professor-jessica-lroe" class="level1">
+<h1>Lightning Talk 2: Beyond Deforestation: Monitoring Change in Tropical Forest Landscapes by Professor Jessica L’Roe</h1>
+<p>let go of gender expectations 1 undergrad female prof</p>
+<p>research themes: livelihoods, wellbeing, and land use in conservation hotspots survey landcover interview property data</p>
+<p>land regisration in brazil - in the amazon forest - property parsal data - remote sensing deforestation v good but couldnt figure out who was responsible - asked them to register property boundaries - people cheated and rounded down to be land smallholders so they wouldnt be held responsible for deforestation</p>
+<p>formalizing gold mining in peru - does formalizing it in one area discourage illegal mining in more sensitive areas? - no answer v brief</p>
+<p>landscape changes around kibale national park, uganda - famous for primate diversity - population of smallholders farms increasing but why instead of increasing food production is there more tree planting?</p>
+<p>her job was on the ground, who is and why are they planting trees - brute force census did you have problems getting access to all of these plots or getting people to answer these questions - 60% something</p>
+<p>related problem as competition for land increase what will happen to local youth? - mothers investing in edjucation instead of land bc that was the safer bet, esp for girls</p>
+<p>grace boyce lauren forrow all things can be data</p>
+</section>
+<section id="lighting-talk-3-computational-linguistic-models-of-mental-health-by-professor-laura-biester" class="level1">
+<h1>Lighting Talk 3: Computational Linguistic Models of Mental Health By Professor Laura Biester</h1>
+<p>connection between lnaguague and mental health - computer used since 1980 to analyze languages for mental health classificaiotn 1st person pronounds used more by depressed people - topic of interest for NLP</p>
+<p>challenge - access to high quality data - need to find a way to use publicly available data, relying on “self-reports” like “i was diagonozed with depression” - big data era with twitter reddit… - huge growth with size of datasets people are working with</p>
+<p>“pre-diagnosis data” - users who self report not representative of full pop with depression models built using datasets based on self-report don’t generlaize well</p>
+<p>how to improve generalizaiton?</p>
+<p>finding diagnosis dates - some self reports hint to when users got diagnosed</p>
+<p>needed dataset to test generalization as well as large scale self-report based dataset collected own data</p>
+<p>360 json files usernames for self reports get those reddit posts then need posts from control users -&gt; got dataset 20.5k diagonsed used and 9 controls per diagoned user around 700 with identified diagnosis data</p>
+<p>second dataset uni michangan 32 depressed users, like 100 controls or somehting out of domain test dat a</p>
+<p>used logisitic regression and TFIDF classified with linear model</p>
+<p>then used mentalBERT extract contextual representations of words</p>
+<p>prediagnosis models did well when compared to all alrge model</p>
+<p>careful dtaa selction can be used to creat mro egenralizable linear models</p>
+<p>model weights for pre-diagnosis models correspond more to symtpoms while all models correpsond to mental health discussion</p>
+<p>data collection is big big part not just abaout building models</p>
+</section>
+<section id="keynote-data-science-skills-in-unexpected-places-by-professor-sarah-brown" class="level1">
+<h1>Keynote: Data Science Skills in Unexpected Places by Professor Sarah Brown</h1>
+<ul>
+<li>cs prof at rhode island, machine learning director</li>
+</ul>
+<p>how to look at machine leanring more fair, should be in toolbox to be more fair</p>
+<p>what is datascience? - venn diagram intersection of cs, stats, and domain expertise, but domain expertise shifts</p>
+<p>key #1 - understanding data’s context - social studies - ptsd - grad school - discourse community of major - advanced writing class</p>
+<p>key 2 accuracy doesn’t equal mistakenly denied bail, accuracy hard to define when not experts - disiplines are communities - just ask people</p>
+<p>key 3 - national society of black energineers - meet people where they were</p>
+<p>biased models still mkaing it out bc they are accuracy but need to meet people where they were</p>
+<p>counts with histograms instead of fitted models</p>
+<p>model predictions may not always be the right</p>
+<p>the hsitograms she did by the three statistcial measures of fiarness - not as strong tradeoffs for some reaosn - took those metrics and did them without model fitting in hisograms</p>
+<p>she said have to let go of accuracy to get rid of data bias, cant</p>
+<p>hehe mentioned our article - what do you choose as your target variable? v important</p>
+<p>“law cant move as fast as code can” because law has to be socially negotiated</p>
+<section id="reflection" class="level3">
+<h3 class="anchored" data-anchor-id="reflection">Reflection:</h3>
 
 
 </section>

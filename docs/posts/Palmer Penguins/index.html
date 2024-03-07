@@ -214,7 +214,7 @@ background-size: cover;
 <p>The aim of this exploration of the Palmer Penguins dataset is to gain insight into the dataset through predictive classification. This exploration involves constructing visualizations of the data using seaborn and creating informative summary tables using pandas. By testing various combinations of models through a reproducible process, three key features are able to be identified. Out of the three features, I found that the combination of 1 qualitative feature: Clutch Completion, and 2 quantitative features: Culmen Length and Culmen Depth, were the most effective to reach 100% testing classification accuracy using a Decision Tree Model. The evaluation phase provides a visual representation of the models behavior by showing the decision regions of the trained decision tree model. Through this process, we gain a comprehensive understanding of the Palmer Penguins dataset and demonstrate the effectiveness of a trained decision tree model in accurately classifying Palmer Penguin data.</p>
 <p>import pandas as pd</p>
 <p>train_url = “https://raw.githubusercontent.com/PhilChodrow/ml-notes/main/data/palmer-penguins/train.csv” train = pd.read_csv(train_url)</p>
-<p>We can take a peek at the data to get a better idea of where to start.</p>
+<p>We can take a peek at the data to get a better idea of where to start, by using .head()</p>
 <p>train.head()</p>
 </section>
 <section id="data-preparation" class="level3">

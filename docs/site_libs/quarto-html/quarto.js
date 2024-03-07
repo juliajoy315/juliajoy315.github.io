@@ -9,11 +9,7 @@ const layoutMarginEls = () => {
   // Find any conflicting margin elements and add margins to the
   // top to prevent overlap
   const marginChildren = window.document.querySelectorAll(
-<<<<<<< HEAD
     ".column-margin.column-container > *, .margin-caption, .aside"
-=======
-    ".column-margin.column-container > * "
->>>>>>> 218c1e36ffee11b1055f7df7eceb63aa0efde58c
   );
 
   let lastBottom = 0;
@@ -22,35 +18,14 @@ const layoutMarginEls = () => {
       // clear the top margin so we recompute it
       marginChild.style.marginTop = null;
       const top = marginChild.getBoundingClientRect().top + window.scrollY;
-<<<<<<< HEAD
       if (top < lastBottom) {
         const marginChildStyle = window.getComputedStyle(marginChild);
         const marginBottom = parseFloat(marginChildStyle["marginBottom"]);
         const margin = lastBottom - top + marginBottom;
-=======
-      console.log({
-        childtop: marginChild.getBoundingClientRect().top,
-        scroll: window.scrollY,
-        top,
-        lastBottom,
-      });
-      if (top < lastBottom) {
-        const margin = lastBottom - top;
->>>>>>> 218c1e36ffee11b1055f7df7eceb63aa0efde58c
         marginChild.style.marginTop = `${margin}px`;
       }
       const styles = window.getComputedStyle(marginChild);
       const marginTop = parseFloat(styles["marginTop"]);
-<<<<<<< HEAD
-=======
-
-      console.log({
-        top,
-        height: marginChild.getBoundingClientRect().height,
-        marginTop,
-        total: top + marginChild.getBoundingClientRect().height + marginTop,
-      });
->>>>>>> 218c1e36ffee11b1055f7df7eceb63aa0efde58c
       lastBottom = top + marginChild.getBoundingClientRect().height + marginTop;
     }
   }
@@ -60,7 +35,6 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
   // Recompute the position of margin elements anytime the body size changes
   if (window.ResizeObserver) {
     const resizeObserver = new window.ResizeObserver(
-<<<<<<< HEAD
       throttle(() => {
         layoutMarginEls();
         if (
@@ -70,9 +44,6 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
           quartoToggleReader();
         }
       }, 50)
-=======
-      throttle(layoutMarginEls, 50)
->>>>>>> 218c1e36ffee11b1055f7df7eceb63aa0efde58c
     );
     resizeObserver.observe(window.document.body);
   }

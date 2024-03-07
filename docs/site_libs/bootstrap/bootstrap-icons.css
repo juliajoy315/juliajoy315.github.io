@@ -1,9 +1,5 @@
 /*!
-<<<<<<< HEAD
  * Bootstrap Icons v1.11.1 (https://icons.getbootstrap.com/)
-=======
- * Bootstrap Icons v1.10.5 (https://icons.getbootstrap.com/)
->>>>>>> 218c1e36ffee11b1055f7df7eceb63aa0efde58c
  * Copyright 2019-2023 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/icons/blob/main/LICENSE)
  */
@@ -12,11 +8,7 @@
   font-display: block;
   font-family: "bootstrap-icons";
   src: 
-<<<<<<< HEAD
 url("./bootstrap-icons.woff?2820a3852bdb9a5832199cc61cec4e65") format("woff");
-=======
-url("./bootstrap-icons.woff?1fa40e8900654d2863d011707b9fb6f2") format("woff");
->>>>>>> 218c1e36ffee11b1055f7df7eceb63aa0efde58c
 }
 
 .bi::before,
@@ -1987,7 +1979,6 @@ url("./bootstrap-icons.woff?1fa40e8900654d2863d011707b9fb6f2") format("woff");
 .bi-sina-weibo::before { content: "\f8ca"; }
 .bi-tencent-qq::before { content: "\f8cb"; }
 .bi-wikipedia::before { content: "\f8cc"; }
-<<<<<<< HEAD
 .bi-alphabet-uppercase::before { content: "\f2a5"; }
 .bi-alphabet::before { content: "\f68a"; }
 .bi-amazon::before { content: "\f68d"; }
@@ -2085,5 +2076,3 @@ url("./bootstrap-icons.woff?1fa40e8900654d2863d011707b9fb6f2") format("woff");
 .bi-suitcase2-fill::before { content: "\f901"; }
 .bi-suitcase2::before { content: "\f902"; }
 .bi-vignette::before { content: "\f903"; }
-=======
->>>>>>> 218c1e36ffee11b1055f7df7eceb63aa0efde58c

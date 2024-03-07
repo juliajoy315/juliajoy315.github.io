@@ -2,10 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/goal-setting/index.html",
-      "/posts/new-test-post/index.html",
-      "/posts/new-new-test-post/index.html",
-      "/posts/example-blog-post/index.html"
+      "/posts/GoalSetting/index.html",
+      "/posts/WIDS Conference/index.html",
+      "/posts/DecisionMaking/index.html",
+      "/posts/Palmer Penguins/index.html"
     ]
   }
 ]
