@@ -1,0 +1,278 @@
+{
+ "cells": [
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# CSCI 0451: Mid-Course Reflection \n",
+    "\n",
+    "Julia Joy"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## The Data\n",
+    "\n",
+    "\n",
+    "### Presence in Class\n",
+    "\n",
+    "- *How often have you attended class? I have attended every class except for 1. \n",
+    "- *How often have you taken notes on the core readings ahead of the class period?* I always read the readings, but I probably take notes on them maybe 1/2-1/3 of the time? \n",
+    "- *How often have you been **prepared** to present the daily warm-up exercise to your team, even if you weren't actually called?* Almost always, probably with the exception of 1 or 2 times. \n",
+    "- *How many times have you **actually** presented the daily warm-up to your team?* I cant quite remember, maybe 3 or 4? \n",
+    "- *How many times have you asked your team for help while presenting the daily warm-up?* I think for 1 part of a problem once. \n",
+    "- *How often have you learned something new from a teammate's presentation of the daily warm-up?* I feel like I can frequently learn a little something new, even if I did the warmup correctly it is always informational to see other approaches or when we were having more discussion-based warmups I learned other perspectives to see things. \n",
+    "- *How often have you helped a teammate during the daily warm-up presentation?* Once or twice but we always contribute to each other. \n",
+    "\n",
+    "### Presence Outside of Class \n",
+    "\n",
+    "- *How often have you attended Student Hours or Peer Help?* I have not attended Student Hours. \n",
+    "- *How often have you asked for or received help from your fellow students?* I have a lot of friends in the class so we often meet together in a study group, so I probably ask someone a question around once a week whether its about the warmups, blog posts, or general clarification of things were supposed to be doing. \n",
+    "- *Have you been regularly participating in a study group outside class?* Yes.\n",
+    "- *How often have you posted questions or answers in Slack?* I have maybe posted one question. \n",
+    "\n",
+    "### Assignments and Effort\n",
+    "\n",
+    "- *How many blog posts have you submitted?* I have submitted 3 blog posts and am currently working on 2 more. \n",
+    "- *How many of your submitted blog posts are at each of the following feedback stages?*\n",
+    "    - E: *No revisions suggested:* 1\n",
+    "    - M: *Revisions useful:* 2\n",
+    "    - R: *Revisions encouraged:* 0\n",
+    "    - N: *Incomplete:* 0\n",
+    "- *Roughly how many hours per week have you spent on this course outside of class?* Roughly 9-11 depending on the week. \n"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## What You've Learned\n",
+    "\n",
+    "*At the beginning of the course, you may have expressed an interest in focusing a little extra on one or two of the following four categories:* \n",
+    "\n",
+    "- ***Theory***: *mathematical descriptions of frameworks and algorithms.*\n",
+    "- ***Implementation***: *effective coding and use of tools in order to implement efficient machine learning algorithms.*\n",
+    "- ***Experimentation***: *performing experiments to assess the performance of algorithms and clearly communicating about the results.*\n",
+    "- ***Social responsibility***: *critical analysis of sources of bias and harm in machine learning algorithms; theoretical formulations of fairness and bias*\n",
+    "\n",
+    "*Did you choose to focus on any of these categories? If so, what have you done in order to pursue your interest?*    "
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "In the beginning, I expressed an interest in the Implementation category, as well as a tentative on in the theory category. I think I have definitely focused in on the Implementation category. I always feel like more practice with effective coding and learning how to use new tools is so invaluable, I feel like I have been able to continue that in this course with the learning of all of our new models like the Perceptron. In general too expanding my coding skills by getting more familiar with python and different packages like torch. I am excited to continue with more different kinds of Machine Learning algorithms and models! \n",
+    "However for the theory category, I do not think I really would like to focus in on the category as much as I originally thought. I forgot how long it had been since I took linear algebra my freshman year, and I have never taken multi-variable calculus. I can obviously handle differentiation, and my mathematical knowledge/general understanding is definitely not lacking, but I realized that I have less interest in intense mathematical descriptions of frameworks and algorithms, I enjoy my little problem sets more. Thus I do not think I will be choosing to focus in on the Theory category that much anymore. I will focus more into the Implementation category as I have been. Our third(?) week in the semester too maybe me more interested in the social responsibility side of machine learning algorithms, so potentially it would be interesting to conduct a series of experiments related to assessing algorithmic bias in a certain class of algorithm for my final project? We shall see! "
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Reflecting on Goals\n",
+    "\n",
+    "*For each of the categories below, replace the \"[your response here]\" cell with 1-2 paragraphs in which you reflect on the following questions:* \n",
+    "\n",
+    "- *In what ways are you **on track to meet your goals** from the beginning of the course? Be specific: explain what the goal is and what you are doing in order to meet it.* \n",
+    "- *In what ways are you **not on track to meet your goals** from the beginning of the course? Be specific: explain what the goal is and what gap you see between where you are and your goal.* \n",
+    "- *If there's any **context** you want to share about how you are faring relative to your goals, please do!*\n",
+    "\n",
+    "### Blog Posts"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "In my original goal setting, I aimed to have a “Satisfactory/No Revision Required” rating on 5-6 of my of my blog posts, and perhaps completing more (I want to complete at least around 60-80% of blog posts) but leaving some space for some blog posts to remain in the “needs revision category”.\" \n",
+    "\n",
+    "I hadn't looked closely enough at the way blog posts were graded yet I guess, because now I know there are two categories that could satisfy that first part of my blog post goals: E: *No revisions suggested: and M: *Revisions useful:*. Ideally all would be E's, but I think I will leave the space for 1-2 blog posts to remain in the M category, as I have recieved enough feedback at this point to understand the difference between an E and M blog post, and that stays in accordance with my goals. Additionally in the second part of my goals for blog posts I said I want to complete around 60-80% of blog posts. After getting through half of the semester, I can understand now that completing 80% of the blog posts is simply out of reach for me in this class, especially as we approach our final projects starting. I also did not realize until after my goal setting that some weeks there would be 2 blog posts that could be completed, so that puts it more in perspective as well as I would only choose 1 of 2 options to complete and not both. I think my goal of completing roughly 60% of blog posts is good, as it is also in accordance with the number of 5-6 solid good work blog posts. \n",
+    "\n",
+    "Currently I have completed 3 blog posts (E,M,M), and have 2 more underway. There have been a total of 7 blog posts out that we could complete, so I am also doing well in my aim of a 60% completion ratio. \n",
+    "\n",
+    "I think that in my goals for the blog posts, I am generally on track to meet my goals from the beginning of the course! I will say that in my goal setting I did mention that ideally it would take me 1-1.5 weeks to complete a blog post and I have struggled to keep up with that timeline, due to other classwork and the fact that I find myself spending considerable amounts of time to thoroughly understand the warmups. I am trying to get better at this timeline, and I think after this week and my 2 in progress blog posts, I will be able to stick to the timeline better. I do think I place more importance in the actual progress of the blog posts rather than the speed at which I turn them in, so I think all should be well for my blog post goals!"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Course Presence (Participation)"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Overall, I definitely think I am on track and acting in accordance with my course presence/participation goals I set. \n",
+    "\n",
+    "I have missed 1 class due to sickness, so I am still very much in line with my goal to attend nearly every class unless truly having to miss it (like when I was sick) or with the personal exception of 2/3 absences. In my goal setting I had aimed to complete every warmup before class and I can happily and proudly say that I have done so for every class period in the semester so far! So my leeway of one or two missed warmups is still very much intact as well. I have also stuck in line of my goals of doing most of the course readings as well as thoroughly participating in our small warmup groups. I have yet to attend peer hours, but I have attended office hours a few times when the need struck which is what I expected and set as an outline for myself. I was right in my guessing that I would not be the biggest slack user, but I have asked all the questions I needed answered in some form or another which is good. Study groups have been big for me this semester too, since I know a good amount of people in the course and find it helpful to talk out some problems I run into, or to confirm things we discuss in class. \n",
+    "\n",
+    "I do think I struggle to raise my hand to answer questions in class, my shyness outweighing everything else. It is something I have tried to work on for a long time, so I have a continued awareness for it in this class as well. "
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Project "
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We still have not started the final project yet, although the project proposal brainstorming is due on Tuesday (as I write this on Friday), so I still do not have super concrete goals for my project. I have the same goals as before, \"I would like to complete all project milestones roughly on time to keep myself and the group accountable in our semester time frame, contribute to the project in an equal manner including in the algorithm implementation and project presentation, and do what I can to be a great group project partner.\", and I do think I will be able to stick in accordance with those goals as our project approaches. This weekend I need to brainstorm what I would like to do for our final project. I think that studying  a complex data set in depth, or conducting a series of experiments related to assessing algorithmic bias in a certain class of algorithm interests me more than implementing a new algorithm. However I will also draw inspiration from other peoples project pitches and who knows maybe I will discover something new and interesting to focus in on for our final project. "
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Other\n",
+    "\n",
+    "*Is there anything else that you want to share with me about what you have learned, how you have participated, or what you have achieved in CSCI 0451?*"
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Not that I can think of right now! "
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Updating Your Goals\n",
+    "\n",
+    "From your experience in CSCI 0451 and your other classes this semester, you may feel moved to make modifications to your goals. Are they still feasible? Too ambitious? Not ambitious enough? If you would like to revise any of your goals from your reflective goal-setting, you can do so below. For each goal you want to modify: \n",
+    "\n",
+    "1. Clearly state what the goal was. \n",
+    "2. Clearly state how you've done on that goal so far. \n",
+    "3. Clearly state your proposed revised goal for the remainder of the course. "
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "I think I have lightly done this throughout this course evaluation and reflection process, but here are the alterations stated plainly. \n",
+    "\n",
+    "1. I had stated a tentative focus on the theory category alongside my primary focus of the implementation category. I no longer wish to focus in as much on the theory category, and instead will apply my efforts to my original focus of the implementation category. Maybe even exploring the social responsibility side of machine learning algorithms in the form of a final project? I did find those weeks of discussion quite interesting, but this is more up to how the final project brainstorming go and if I find my interest sparked by anything. \n",
+    "\n",
+    "2. In my original goal of completing 60%-80% of blog posts, after half a semester and a more thorough understanding of how many blog posts we are assigned to be able to do, completing 80% of blog posts is not achievable for me. So I will stick with the lower limit of 60%, or aka 5-6 blog posts. "
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Grade and Goals\n",
+    "\n",
+    "*Take 15 minutes to look back on your responses in each of the sections above. Then, state the letter grade that you feel reflects your learning, participation, and achievement in CSCI 0451 **so far**, and contextualize it against some of the soundbytes below.* \n",
+    "\n",
+    "### What a Grade Sounds Like\n",
+    "\n",
+    "*An **A** sounds like:* \n",
+    "\n",
+    "- *\"I am very proud of my time in this course.\"*\n",
+    "- *\"I have grown significantly in multiple ways that matter to me.\"*\n",
+    "- *\"I am ready to take the theory, techniques, and ideas of this course into my future classes, projects, hobbies, or career.\"* \n",
+    "\n",
+    "*A **B** sounds like:* \n",
+    "\n",
+    "- *\"I had some opportunities to learn more, overall I feel good about my time in this course.\"*\n",
+    "- *\"I am able to explain some new things or achieve new tasks.\"*\n",
+    "- *\"I can see a few ideas from this course that will be relevant for my future classes, projects, hobbies, or career.\"*\n",
+    "\n",
+    "*A **C** sounds like:* \n",
+    "\n",
+    "- *\"I often made a good effort, but I missed many opportunities to get more out of my time in this course.\"*\n",
+    "- *\"I might be able to complete some new tasks related to the course content, but only with significant further guidance.\"* \n",
+    "- *\"I don't see any ways to take the contents of this course into my future classes, projects, hobbies, or career.\"*\n",
+    "\n",
+    "*You might find that some of these soundbytes resonate and other's don't! Take some time, see what feels right, and don't be afraid to celebrate your achievements.* "
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "> **Upon reflection, I feel that my learning, participation, and achievement in CSCI 0451 (so far) are best reflected by a grade of** A\n",
+    "\n",
+    "> **A way in which I resonate with the soundbytes for that grade above is...** \n",
+    "- I am proud of my time in this course. \n",
+    "- I am ready to take the techniques and ideas of this course into my future. \n",
+    "- I have acted in accordance with my goals I set for myself at the beginning of the semester. \n",
+    "\n",
+    "\n",
+    "Upon completing this mid-course reflection and evaluation, I am very proud that I have stuck in accordance with my goals. I feel that I have acted as a hard-working student in this course, barely deviating from any goals and putting in the time and work that I wanted to see myself do in this class. For these reasons I feel like my learning participation and achievement in CSCI 0451 so far are best reflected by a grade of A. I hope to stick in accordance with my goals for the remainder of the semester and as our final project approaches. "
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## (Optional:) How to Improve? \n",
+    "\n",
+    "*You may feel disappointed by your reflection. Sometimes we don't achieve all our goals -- it happens and it's normal! If you are feeling disappointed by how you've learned, participated, or achieved in CSCI 0451, then feel free to write something about that below. Feel free to just write your feelings. If you have ideas for how to move forward, include those too! We'll talk.* "
+   ]
+  },
+  {
+   "attachments": {},
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "[your response here]"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.18"
+  },
+  "vscode": {
+   "interpreter": {
+    "hash": "debe06cc0f9553f110b64dc3926c05df82dae2145b852c8422b9c04315589dcb"
+   }
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
