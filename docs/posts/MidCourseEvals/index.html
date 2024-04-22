@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>My Awesome CSCI 0451 Blog - CSCI 0451: Mid-Course Reflection</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: white;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: white;
+background-image: url(../../img/landscape.png);
+background-size: cover;
+      }
+</style>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">My Awesome CSCI 0451 Blog</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">CSCI 0451: Mid-Course Reflection</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="csci-0451-mid-course-reflection" class="level1">
+<h1>CSCI 0451: Mid-Course Reflection</h1>
+<p>Julia Joy</p>
+<section id="the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-data">The Data</h2>
+<section id="presence-in-class" class="level3">
+<h3 class="anchored" data-anchor-id="presence-in-class">Presence in Class</h3>
+<ul>
+<li>*How often have you attended class? I have attended every class except for 1.</li>
+<li><em>How often have you taken notes on the core readings ahead of the class period?</em> I always read the readings, but I probably take notes on them maybe 1/2-1/3 of the time?</li>
+<li><em>How often have you been <strong>prepared</strong> to present the daily warm-up exercise to your team, even if you weren’t actually called?</em> Almost always, probably with the exception of 1 or 2 times.</li>
+<li><em>How many times have you <strong>actually</strong> presented the daily warm-up to your team?</em> I cant quite remember, maybe 3 or 4?</li>
+<li><em>How many times have you asked your team for help while presenting the daily warm-up?</em> I think for 1 part of a problem once.</li>
+<li><em>How often have you learned something new from a teammate’s presentation of the daily warm-up?</em> I feel like I can frequently learn a little something new, even if I did the warmup correctly it is always informational to see other approaches or when we were having more discussion-based warmups I learned other perspectives to see things.</li>
+<li><em>How often have you helped a teammate during the daily warm-up presentation?</em> Once or twice but we always contribute to each other.</li>
+</ul>
+</section>
+<section id="presence-outside-of-class" class="level3">
+<h3 class="anchored" data-anchor-id="presence-outside-of-class">Presence Outside of Class</h3>
+<ul>
+<li><em>How often have you attended Student Hours or Peer Help?</em> I have not attended Student Hours.</li>
+<li><em>How often have you asked for or received help from your fellow students?</em> I have a lot of friends in the class so we often meet together in a study group, so I probably ask someone a question around once a week whether its about the warmups, blog posts, or general clarification of things were supposed to be doing.</li>
+<li><em>Have you been regularly participating in a study group outside class?</em> Yes.</li>
+<li><em>How often have you posted questions or answers in Slack?</em> I have maybe posted one question.</li>
+</ul>
+</section>
+<section id="assignments-and-effort" class="level3">
+<h3 class="anchored" data-anchor-id="assignments-and-effort">Assignments and Effort</h3>
+<ul>
+<li><em>How many blog posts have you submitted?</em> I have submitted 3 blog posts and am currently working on 2 more.</li>
+<li><em>How many of your submitted blog posts are at each of the following feedback stages?</em>
+<ul>
+<li>E: <em>No revisions suggested:</em> 1</li>
+<li>M: <em>Revisions useful:</em> 2</li>
+<li>R: <em>Revisions encouraged:</em> 0</li>
+<li>N: <em>Incomplete:</em> 0</li>
+</ul></li>
+<li><em>Roughly how many hours per week have you spent on this course outside of class?</em> Roughly 9-11 depending on the week.</li>
+</ul>
+</section>
+</section>
+<section id="what-youve-learned" class="level2">
+<h2 class="anchored" data-anchor-id="what-youve-learned">What You’ve Learned</h2>
+<p><em>At the beginning of the course, you may have expressed an interest in focusing a little extra on one or two of the following four categories:</em></p>
+<ul>
+<li><strong><em>Theory</em></strong>: <em>mathematical descriptions of frameworks and algorithms.</em></li>
+<li><strong><em>Implementation</em></strong>: <em>effective coding and use of tools in order to implement efficient machine learning algorithms.</em></li>
+<li><strong><em>Experimentation</em></strong>: <em>performing experiments to assess the performance of algorithms and clearly communicating about the results.</em></li>
+<li><strong><em>Social responsibility</em></strong>: <em>critical analysis of sources of bias and harm in machine learning algorithms; theoretical formulations of fairness and bias</em></li>
+</ul>
+<p><em>Did you choose to focus on any of these categories? If so, what have you done in order to pursue your interest?</em></p>
+<p>In the beginning, I expressed an interest in the Implementation category, as well as a tentative on in the theory category. I think I have definitely focused in on the Implementation category. I always feel like more practice with effective coding and learning how to use new tools is so invaluable, I feel like I have been able to continue that in this course with the learning of all of our new models like the Perceptron. In general too expanding my coding skills by getting more familiar with python and different packages like torch. I am excited to continue with more different kinds of Machine Learning algorithms and models! However for the theory category, I do not think I really would like to focus in on the category as much as I originally thought. I forgot how long it had been since I took linear algebra my freshman year, and I have never taken multi-variable calculus. I can obviously handle differentiation, and my mathematical knowledge/general understanding is definitely not lacking, but I realized that I have less interest in intense mathematical descriptions of frameworks and algorithms, I enjoy my little problem sets more. Thus I do not think I will be choosing to focus in on the Theory category that much anymore. I will focus more into the Implementation category as I have been. Our third(?) week in the semester too maybe me more interested in the social responsibility side of machine learning algorithms, so potentially it would be interesting to conduct a series of experiments related to assessing algorithmic bias in a certain class of algorithm for my final project? We shall see!</p>
+</section>
+<section id="reflecting-on-goals" class="level2">
+<h2 class="anchored" data-anchor-id="reflecting-on-goals">Reflecting on Goals</h2>
+<p><em>For each of the categories below, replace the “[your response here]” cell with 1-2 paragraphs in which you reflect on the following questions:</em></p>
+<ul>
+<li><em>In what ways are you <strong>on track to meet your goals</strong> from the beginning of the course? Be specific: explain what the goal is and what you are doing in order to meet it.</em></li>
+<li><em>In what ways are you <strong>not on track to meet your goals</strong> from the beginning of the course? Be specific: explain what the goal is and what gap you see between where you are and your goal.</em></li>
+<li><em>If there’s any <strong>context</strong> you want to share about how you are faring relative to your goals, please do!</em></li>
+</ul>
+<section id="blog-posts" class="level3">
+<h3 class="anchored" data-anchor-id="blog-posts">Blog Posts</h3>
+<p>In my original goal setting, I aimed to have a “Satisfactory/No Revision Required” rating on 5-6 of my of my blog posts, and perhaps completing more (I want to complete at least around 60-80% of blog posts) but leaving some space for some blog posts to remain in the “needs revision category”.”</p>
+<p>I hadn’t looked closely enough at the way blog posts were graded yet I guess, because now I know there are two categories that could satisfy that first part of my blog post goals: E: <em>No revisions suggested: and M: </em>Revisions useful:*. Ideally all would be E’s, but I think I will leave the space for 1-2 blog posts to remain in the M category, as I have recieved enough feedback at this point to understand the difference between an E and M blog post, and that stays in accordance with my goals. Additionally in the second part of my goals for blog posts I said I want to complete around 60-80% of blog posts. After getting through half of the semester, I can understand now that completing 80% of the blog posts is simply out of reach for me in this class, especially as we approach our final projects starting. I also did not realize until after my goal setting that some weeks there would be 2 blog posts that could be completed, so that puts it more in perspective as well as I would only choose 1 of 2 options to complete and not both. I think my goal of completing roughly 60% of blog posts is good, as it is also in accordance with the number of 5-6 solid good work blog posts.</p>
+<p>Currently I have completed 3 blog posts (E,M,M), and have 2 more underway. There have been a total of 7 blog posts out that we could complete, so I am also doing well in my aim of a 60% completion ratio.</p>
+<p>I think that in my goals for the blog posts, I am generally on track to meet my goals from the beginning of the course! I will say that in my goal setting I did mention that ideally it would take me 1-1.5 weeks to complete a blog post and I have struggled to keep up with that timeline, due to other classwork and the fact that I find myself spending considerable amounts of time to thoroughly understand the warmups. I am trying to get better at this timeline, and I think after this week and my 2 in progress blog posts, I will be able to stick to the timeline better. I do think I place more importance in the actual progress of the blog posts rather than the speed at which I turn them in, so I think all should be well for my blog post goals!</p>
+</section>
+<section id="course-presence-participation" class="level3">
+<h3 class="anchored" data-anchor-id="course-presence-participation">Course Presence (Participation)</h3>
+<p>Overall, I definitely think I am on track and acting in accordance with my course presence/participation goals I set.</p>
+<p>I have missed 1 class due to sickness, so I am still very much in line with my goal to attend nearly every class unless truly having to miss it (like when I was sick) or with the personal exception of 2/3 absences. In my goal setting I had aimed to complete every warmup before class and I can happily and proudly say that I have done so for every class period in the semester so far! So my leeway of one or two missed warmups is still very much intact as well. I have also stuck in line of my goals of doing most of the course readings as well as thoroughly participating in our small warmup groups. I have yet to attend peer hours, but I have attended office hours a few times when the need struck which is what I expected and set as an outline for myself. I was right in my guessing that I would not be the biggest slack user, but I have asked all the questions I needed answered in some form or another which is good. Study groups have been big for me this semester too, since I know a good amount of people in the course and find it helpful to talk out some problems I run into, or to confirm things we discuss in class.</p>
+<p>I do think I struggle to raise my hand to answer questions in class, my shyness outweighing everything else. It is something I have tried to work on for a long time, so I have a continued awareness for it in this class as well.</p>
+</section>
+<section id="project" class="level3">
+<h3 class="anchored" data-anchor-id="project">Project</h3>
+<p>We still have not started the final project yet, although the project proposal brainstorming is due on Tuesday (as I write this on Friday), so I still do not have super concrete goals for my project. I have the same goals as before, “I would like to complete all project milestones roughly on time to keep myself and the group accountable in our semester time frame, contribute to the project in an equal manner including in the algorithm implementation and project presentation, and do what I can to be a great group project partner.”, and I do think I will be able to stick in accordance with those goals as our project approaches. This weekend I need to brainstorm what I would like to do for our final project. I think that studying a complex data set in depth, or conducting a series of experiments related to assessing algorithmic bias in a certain class of algorithm interests me more than implementing a new algorithm. However I will also draw inspiration from other peoples project pitches and who knows maybe I will discover something new and interesting to focus in on for our final project.</p>
+</section>
+<section id="other" class="level3">
+<h3 class="anchored" data-anchor-id="other">Other</h3>
+<p><em>Is there anything else that you want to share with me about what you have learned, how you have participated, or what you have achieved in CSCI 0451?</em></p>
+<p>Not that I can think of right now!</p>
+</section>
+<section id="updating-your-goals" class="level3">
+<h3 class="anchored" data-anchor-id="updating-your-goals">Updating Your Goals</h3>
+<p>From your experience in CSCI 0451 and your other classes this semester, you may feel moved to make modifications to your goals. Are they still feasible? Too ambitious? Not ambitious enough? If you would like to revise any of your goals from your reflective goal-setting, you can do so below. For each goal you want to modify:</p>
+<ol type="1">
+<li>Clearly state what the goal was.</li>
+<li>Clearly state how you’ve done on that goal so far.</li>
+<li>Clearly state your proposed revised goal for the remainder of the course.</li>
+</ol>
+<p>I think I have lightly done this throughout this course evaluation and reflection process, but here are the alterations stated plainly.</p>
+<ol type="1">
+<li><p>I had stated a tentative focus on the theory category alongside my primary focus of the implementation category. I no longer wish to focus in as much on the theory category, and instead will apply my efforts to my original focus of the implementation category. Maybe even exploring the social responsibility side of machine learning algorithms in the form of a final project? I did find those weeks of discussion quite interesting, but this is more up to how the final project brainstorming go and if I find my interest sparked by anything.</p></li>
+<li><p>In my original goal of completing 60%-80% of blog posts, after half a semester and a more thorough understanding of how many blog posts we are assigned to be able to do, completing 80% of blog posts is not achievable for me. So I will stick with the lower limit of 60%, or aka 5-6 blog posts.</p></li>
+</ol>
+</section>
+</section>
+<section id="grade-and-goals" class="level2">
+<h2 class="anchored" data-anchor-id="grade-and-goals">Grade and Goals</h2>
+<p><em>Take 15 minutes to look back on your responses in each of the sections above. Then, state the letter grade that you feel reflects your learning, participation, and achievement in CSCI 0451 <strong>so far</strong>, and contextualize it against some of the soundbytes below.</em></p>
+<section id="what-a-grade-sounds-like" class="level3">
+<h3 class="anchored" data-anchor-id="what-a-grade-sounds-like">What a Grade Sounds Like</h3>
+<p><em>An <strong>A</strong> sounds like:</em></p>
+<ul>
+<li><em>“I am very proud of my time in this course.”</em></li>
+<li><em>“I have grown significantly in multiple ways that matter to me.”</em></li>
+<li><em>“I am ready to take the theory, techniques, and ideas of this course into my future classes, projects, hobbies, or career.”</em></li>
+</ul>
+<p><em>A <strong>B</strong> sounds like:</em></p>
+<ul>
+<li><em>“I had some opportunities to learn more, overall I feel good about my time in this course.”</em></li>
+<li><em>“I am able to explain some new things or achieve new tasks.”</em></li>
+<li><em>“I can see a few ideas from this course that will be relevant for my future classes, projects, hobbies, or career.”</em></li>
+</ul>
+<p><em>A <strong>C</strong> sounds like:</em></p>
+<ul>
+<li><em>“I often made a good effort, but I missed many opportunities to get more out of my time in this course.”</em></li>
+<li><em>“I might be able to complete some new tasks related to the course content, but only with significant further guidance.”</em></li>
+<li><em>“I don’t see any ways to take the contents of this course into my future classes, projects, hobbies, or career.”</em></li>
+</ul>
+<p><em>You might find that some of these soundbytes resonate and other’s don’t! Take some time, see what feels right, and don’t be afraid to celebrate your achievements.</em></p>
+<blockquote class="blockquote">
+<p><strong>Upon reflection, I feel that my learning, participation, and achievement in CSCI 0451 (so far) are best reflected by a grade of</strong> A</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>A way in which I resonate with the soundbytes for that grade above is…</strong> - I am proud of my time in this course. - I am ready to take the techniques and ideas of this course into my future. - I have acted in accordance with my goals I set for myself at the beginning of the semester.</p>
+</blockquote>
+<p>Upon completing this mid-course reflection and evaluation, I am very proud that I have stuck in accordance with my goals. I feel that I have acted as a hard-working student in this course, barely deviating from any goals and putting in the time and work that I wanted to see myself do in this class. For these reasons I feel like my learning participation and achievement in CSCI 0451 so far are best reflected by a grade of A. I hope to stick in accordance with my goals for the remainder of the semester and as our final project approaches.</p>
+</section>
+</section>
+<section id="optional-how-to-improve" class="level2">
+<h2 class="anchored" data-anchor-id="optional-how-to-improve">(Optional:) How to Improve?</h2>
+<p><em>You may feel disappointed by your reflection. Sometimes we don’t achieve all our goals – it happens and it’s normal! If you are feeling disappointed by how you’ve learned, participated, or achieved in CSCI 0451, then feel free to write something about that below. Feel free to just write your feelings. If you have ideas for how to move forward, include those too! We’ll talk.</em></p>
+<p>[your response here]</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
