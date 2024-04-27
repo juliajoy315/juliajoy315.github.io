@@ -212,7 +212,7 @@ background-size: cover;
 <section id="abstract" class="level3">
 <h3 class="anchored" data-anchor-id="abstract">Abstract</h3>
 <p>In this blog post, I implemented the perceptron algorithm, a fundamental part of many machine learning models. Through a series of visualizations, I demonstrate the behavior of the perceptron algorithm on both linearly separable and non-linearly separable datasets in two dimensions, as well as multi-dimensional feature spaces. Additionally, I implemented the minibatch perceptron, exploring training efficiency compared to the regular perceptron as well as looking at loss convergence behavior. Through this process, I learned the ins and outs of the perceptron algorithm, and how it responds to different types of data.</p>
-<div id="cell-2" class="cell" data-execution_count="151">
+<div id="cell-2" class="cell" data-execution_count="70">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext autoreload</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> perceptron <span class="im">import</span> Perceptron, PerceptronOptimizer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -221,12 +221,20 @@ background-size: cover;
   %reload_ext autoreload</code></pre>
 </div>
 </div>
-<p>The implementation of the perceptron algorithm itself is located in file perceptron.py. In this file I implemented the score, predict, loss, step, and grad functions. In order to check if this code is correctly working, I run the minimal training loop code from class notes, aiming to end with loss = 0 on linearly separable data. ## Part B: Experiments</p>
 </section>
+<section id="part-a-perceptron-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="part-a-perceptron-implementation">Part A: Perceptron Implementation</h2>
+<p>The implementation of the perceptron algorithm itself is located in file perceptron.py. In this file I implemented the score, predict, loss, step, and grad functions:</p>
+<p>score: Computes the scores for each data point in the feature matrix X. The formula for the ith entry of s is s[i] = &lt;self.w, x[i]&gt;, the cross product of the input data and the model weights.</p>
+<p>predict: Calculates y_hat, the predictions for each data point in the feature matrix X. y_hat takes on values of either 1 or 0, where y_hat is assigned 1 if the score &gt;=0 , and y_hat is assigned 0 otherwise.</p>
+<p>loss: Computes the misclassification rate of the model by calculating the mean of all the misclassified data points.</p>
+<p>step: Compute one update step of the perceptron update using the feature matrix X and target vector y.</p>
+<p>grad: This function computes the gradient of the empirical risk. If a data point is correctly classified, it returns a gradient of 0. If a data point is misclassified, it returns the gradient of the cross product between the input data and the output.</p>
+<p>In order to check if this code is correctly working, I must perform experiments on different kinds of data. ## Part B: Experiments</p>
 <section id="linearly-separable-data" class="level3">
 <h3 class="anchored" data-anchor-id="linearly-separable-data">Linearly Separable Data:</h3>
-<p>First, I visualize the data, to see how the data I am working with is indeed linearly-separable.</p>
-<div id="cell-4" class="cell" data-execution_count="152">
+<p>I first visualize the data, to see how the data I am working with is indeed linearly-separable. I run the minimal training loop code from class notes, aiming to end with loss = 0 on linearly separable data.</p>
+<div id="cell-4" class="cell" data-execution_count="71">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-whitegrid'</span>)</span>
@@ -268,7 +276,7 @@ background-size: cover;
 </div>
 <p>We can clearly see that the data could be separated by a line, dividing the two classes, orange and blue.</p>
 <p>I then run the minimal training loop, and plot the evolution of the loss function.</p>
-<div id="cell-7" class="cell" data-execution_count="154">
+<div id="cell-7" class="cell" data-execution_count="72">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Perceptron() </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>opt <span class="op">=</span> PerceptronOptimizer(p)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>loss <span class="op">=</span> <span class="fl">1.0</span></span>
@@ -286,7 +294,7 @@ background-size: cover;
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    y_i <span class="op">=</span> y[i]</span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    opt.step(x_i, y_i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-8" class="cell" data-execution_count="140">
+<div id="cell-8" class="cell" data-execution_count="73">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-whitegrid'</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.plot(lossVec, color <span class="op">=</span> <span class="st">"slategrey"</span>)</span>
@@ -305,10 +313,11 @@ background-size: cover;
 </div>
 <p>We can see that the loss decreases after many iterations and eventually reaches 0 when running on this linearly-separable data.</p>
 </section>
+</section>
 <section id="non-linearly-separable-data" class="level2">
 <h2 class="anchored" data-anchor-id="non-linearly-separable-data">Non-Linearly separable Data:</h2>
 <p>We must first generate some data that we know will not be linearly separable. We can do this by editing code provided by the class notes. Non-linearly separable data means that certain data points are in the space that would normally be considered distinctly one class or another, these points are our overlapping data points.</p>
-<div id="cell-11" class="cell" data-execution_count="141">
+<div id="cell-11" class="cell" data-execution_count="74">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-whitegrid'</span>)</span>
@@ -335,7 +344,7 @@ background-size: cover;
 <span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> X, y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In order to visualize the now newly-altered, non-linearly separable data, we can plot the data as a scatterplot, also using the class notes.</p>
-<div id="cell-13" class="cell" data-execution_count="142">
+<div id="cell-13" class="cell" data-execution_count="75">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plotOverlap(X, y, ax):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> X.shape[<span class="dv">1</span>] <span class="op">==</span> <span class="dv">3</span>, <span class="st">"This function only works for data created with p_dims == 2"</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    targets <span class="op">=</span> [<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>]</span>
@@ -345,9 +354,11 @@ background-size: cover;
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        ax.scatter(X[ix,<span class="dv">0</span>], X[ix,<span class="dv">1</span>], s <span class="op">=</span> <span class="dv">20</span>,  c <span class="op">=</span> y[ix], facecolors <span class="op">=</span> <span class="st">"none"</span>, edgecolors <span class="op">=</span> <span class="st">"darkgrey"</span>, cmap <span class="op">=</span> <span class="st">"BrBG"</span>, vmin <span class="op">=</span> <span class="op">-</span><span class="dv">2</span>, vmax <span class="op">=</span> <span class="dv">2</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, marker <span class="op">=</span> markers[i])</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    ax.<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="vs">r"$x_1$"</span>, ylabel <span class="op">=</span> <span class="vs">r"$x_2$"</span>)</span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> overlapPerceptronData()</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>plotOverlap(X, y, ax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> overlapPerceptronData()</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>nonLinPlot <span class="op">=</span> plotOverlap(X, y, ax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -357,7 +368,7 @@ background-size: cover;
 </div>
 </div>
 <p>We can see that the overlapping of the data was successful, thus meaning that our data is no longer linearly-separable. Now we can rerun the perceptron algorithm, but since the data is not linearly separable it must be run for a certain number of iterations to ensure that the algorithm terminates. The number of iterations is set to 1000, plenty for the algorithm to run its due course.</p>
-<div id="cell-15" class="cell" data-execution_count="143">
+<div id="cell-15" class="cell" data-execution_count="76">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">1234</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Perceptron()</span>
@@ -373,10 +384,12 @@ background-size: cover;
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    y_i <span class="op">=</span> y[i]</span>
 <span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    local_loss <span class="op">=</span> opt.step(x_i, y_i)</span>
 <span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    loss <span class="op">=</span> p.loss(X, y).item()</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    lossVecNLS.append(loss)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    lossVecNLS.append(loss)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>finalWeights <span class="op">=</span> opt.model.w</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now we visualize the evolution of the loss function for a non-linearly separable dataset. We can note that although the loss does decrease over iterations, it never fully reaches 0, unlike the plot of the evolution of the loss function with linearly-separable data.</p>
-<div id="cell-17" class="cell" data-execution_count="144">
+<div id="cell-17" class="cell" data-execution_count="77">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-whitegrid'</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>plt.plot(lossVecNLS, color <span class="op">=</span> <span class="st">"slategrey"</span>)</span>
@@ -393,48 +406,76 @@ background-size: cover;
 </div>
 </div>
 </div>
+<p>Let’s show the decision boundary in the final iteration, after 1000 runs of the perceptron updates. We can utilize the draw_line function from lecture to do so.</p>
+<div id="cell-19" class="cell" data-execution_count="86">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#function from lecture</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> draw_line(w, x_min, x_max, ax, <span class="op">**</span>kwargs):</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    w_ <span class="op">=</span> w.flatten()</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> torch.linspace(x_min, x_max, <span class="dv">101</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="op">-</span>(w_[<span class="dv">0</span>]<span class="op">*</span>x <span class="op">+</span> w_[<span class="dv">2</span>])<span class="op">/</span>w_[<span class="dv">1</span>]</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> ax.plot(x, y, <span class="op">**</span>kwargs) </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>plotOverlap(X, y, ax)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>draw_line(finalWeights, x_min <span class="op">=</span> <span class="op">-</span><span class="dv">2</span>, x_max <span class="op">=</span> <span class="dv">3</span>, ax <span class="op">=</span> ax, color <span class="op">=</span> <span class="st">"black"</span>, linestyle <span class="op">=</span> <span class="st">"dashed"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-10-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="data-in-more-than-two-dimensions" class="level2">
 <h2 class="anchored" data-anchor-id="data-in-more-than-two-dimensions">Data in More Than Two Dimensions:</h2>
 <p>The perceptron algorithm is also able to work on data with more than 2 dimensions, in this case the generated data has 5 dimensions. Similarly to how I did before, I rerun the perceptron algorithm, and visualize the evolution of the loss function.</p>
-<div id="cell-19" class="cell" data-execution_count="145">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> overlapPerceptronData(n_points <span class="op">=</span> <span class="dv">300</span>, noise <span class="op">=</span> <span class="fl">0.2</span>, p_dims <span class="op">=</span> <span class="dv">5</span>, numOverlap <span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">12345</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Perceptron()</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>opt <span class="op">=</span> PerceptronOptimizer(p)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> overlapPerceptronData()</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>lossVecMD <span class="op">=</span> []</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">1000</span>):</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> torch.randint(n, size <span class="op">=</span> (<span class="dv">1</span>,))</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    x_i <span class="op">=</span> X[[i],:]</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    y_i <span class="op">=</span> y[i]</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    local_loss <span class="op">=</span> opt.step(x_i, y_i)</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    loss <span class="op">=</span> p.loss(X, y).item()</span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    lossVecMD.append(loss)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-21" class="cell" data-execution_count="79">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> overlapPerceptronData(n_points <span class="op">=</span> <span class="dv">300</span>, noise <span class="op">=</span> <span class="fl">0.2</span>, p_dims <span class="op">=</span> <span class="dv">5</span>, numOverlap <span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">12345</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Perceptron()</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>opt <span class="op">=</span> PerceptronOptimizer(p)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> overlapPerceptronData()</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>lossVecMD <span class="op">=</span> []</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">1000</span>):</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> torch.randint(n, size <span class="op">=</span> (<span class="dv">1</span>,))</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    x_i <span class="op">=</span> X[[i],:]</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    y_i <span class="op">=</span> y[i]</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    local_loss <span class="op">=</span> opt.step(x_i, y_i)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    loss <span class="op">=</span> p.loss(X, y).item()</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    lossVecMD.append(loss)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-20" class="cell" data-execution_count="146">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-whitegrid'</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plt.plot(lossVecMD, color <span class="op">=</span> <span class="st">"slategrey"</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.scatter(torch.arange(<span class="bu">len</span>(lossVecMD)), lossVecMD, color <span class="op">=</span> <span class="st">"slategrey"</span>, s<span class="op">=</span><span class="dv">3</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>labs <span class="op">=</span> plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"Perceptron Iteration (Updates Only)"</span>, ylabel <span class="op">=</span> <span class="st">"loss"</span>)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f"Evolution of the Loss Function with Multiple Dimensions"</span>)</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#check final loss value as a means of verifying model </span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>finalLossVal <span class="op">=</span> lossVecMD[<span class="bu">len</span>(lossVecMD)<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>finalLossVal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="146">
+<div id="cell-22" class="cell" data-execution_count="80">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-whitegrid'</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>plt.plot(lossVecMD, color <span class="op">=</span> <span class="st">"slategrey"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>plt.scatter(torch.arange(<span class="bu">len</span>(lossVecMD)), lossVecMD, color <span class="op">=</span> <span class="st">"slategrey"</span>, s<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>labs <span class="op">=</span> plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"Perceptron Iteration (Updates Only)"</span>, ylabel <span class="op">=</span> <span class="st">"loss"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f"Evolution of the Loss Function with Multiple Dimensions"</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#check final loss value as a means of verifying model </span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>finalLossVal <span class="op">=</span> lossVecMD[<span class="bu">len</span>(lossVecMD)<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>finalLossVal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="80">
 <pre><code>0.05454545468091965</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-11-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-12-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -446,90 +487,43 @@ background-size: cover;
 </section>
 <section id="k-1" class="level3">
 <h3 class="anchored" data-anchor-id="k-1">k = 1</h3>
-<div id="cell-24" class="cell" data-execution_count="158">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> perceptron_data()</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">12345</span>) </span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Perceptron() </span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>opt <span class="op">=</span> PerceptronOptimizer(p)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>loss <span class="op">=</span> <span class="fl">1.0</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>lossVecMinibatch <span class="op">=</span> []</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> X.size()[<span class="dv">0</span>]</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">1000</span>):</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    loss <span class="op">=</span> p.loss(X, y) </span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    lossVecMinibatch.append(loss)</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> <span class="dv">1</span> </span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    ix <span class="op">=</span> torch.randperm(X.size(<span class="dv">0</span>))[:k]</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    xSubmatrix <span class="op">=</span> X[ix]</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    ySubmatrix <span class="op">=</span> y[ix]</span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># opt step with the random submatrix</span></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    opt.step(xSubmatrix, ySubmatrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-26" class="cell" data-execution_count="81">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> perceptron_data()</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">12345</span>) </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Perceptron() </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>opt <span class="op">=</span> PerceptronOptimizer(p)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>loss <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>lossVecMinibatch <span class="op">=</span> []</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> X.size()[<span class="dv">0</span>]</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">1000</span>):</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    loss <span class="op">=</span> p.loss(X, y) </span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    lossVecMinibatch.append(loss)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> <span class="dv">1</span> </span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    ix <span class="op">=</span> torch.randperm(X.size(<span class="dv">0</span>))[:k]</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    xSubmatrix <span class="op">=</span> X[ix]</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    ySubmatrix <span class="op">=</span> y[ix]</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># opt step with the random submatrix</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    opt.step(xSubmatrix, ySubmatrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-25" class="cell" data-execution_count="159">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-whitegrid'</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>plt.plot(lossVecMinibatch, color <span class="op">=</span> <span class="st">"slategrey"</span>)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>plt.scatter(torch.arange(<span class="bu">len</span>(lossVecMinibatch)), lossVecMinibatch, color <span class="op">=</span> <span class="st">"slategrey"</span>, s<span class="op">=</span><span class="dv">3</span>)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>labs <span class="op">=</span> plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"Perceptron Iteration (Updates Only)"</span>, ylabel <span class="op">=</span> <span class="st">"loss"</span>)</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f"Evolution of the Loss Function with Multiple Dimensions"</span>)</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#check final loss value as a means of verifying model </span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>finalLossVal <span class="op">=</span> lossVecMinibatch[<span class="bu">len</span>(lossVecMinibatch)<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>finalLossVal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="159">
+<div id="cell-27" class="cell" data-execution_count="82">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-whitegrid'</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>plt.plot(lossVecMinibatch, color <span class="op">=</span> <span class="st">"slategrey"</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>plt.scatter(torch.arange(<span class="bu">len</span>(lossVecMinibatch)), lossVecMinibatch, color <span class="op">=</span> <span class="st">"slategrey"</span>, s<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>labs <span class="op">=</span> plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"Perceptron Iteration (Updates Only)"</span>, ylabel <span class="op">=</span> <span class="st">"loss"</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f"Evolution of the Loss Function with Multiple Dimensions"</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">#check final loss value as a means of verifying model </span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>finalLossVal <span class="op">=</span> lossVecMinibatch[<span class="bu">len</span>(lossVecMinibatch)<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>finalLossVal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="82">
 <pre><code>tensor(0.)</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-2.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>When k = 1, we can see that the mini-batch perceptron performs similarly to the regular perceptron on linearly separable data, as its loss eventually reaches 0.</p>
-<div id="cell-27" class="cell" data-execution_count="161">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> overlapPerceptronData()</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">12345</span>) </span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Perceptron() </span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>opt <span class="op">=</span> PerceptronOptimizer(p)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>loss <span class="op">=</span> <span class="fl">1.0</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>lossVecMinibatch <span class="op">=</span> []</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> X.size()[<span class="dv">0</span>]</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">1000</span>):</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    loss <span class="op">=</span> p.loss(X, y) </span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    lossVecMinibatch.append(loss)</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> <span class="dv">1</span> </span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    ix <span class="op">=</span> torch.randperm(X.size(<span class="dv">0</span>))[:k]</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    xSubmatrix <span class="op">=</span> X[ix]</span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    ySubmatrix <span class="op">=</span> y[ix]</span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># opt step with the random submatrix</span></span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    opt.step(xSubmatrix, ySubmatrix)</span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-whitegrid'</span>)</span>
-<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>plt.plot(lossVecMinibatch, color <span class="op">=</span> <span class="st">"slategrey"</span>)</span>
-<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>plt.scatter(torch.arange(<span class="bu">len</span>(lossVecMinibatch)), lossVecMinibatch, color <span class="op">=</span> <span class="st">"slategrey"</span>, s<span class="op">=</span><span class="dv">3</span>)</span>
-<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>labs <span class="op">=</span> plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"Perceptron Iteration (Updates Only)"</span>, ylabel <span class="op">=</span> <span class="st">"loss"</span>)</span>
-<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f"Evolution of the Loss Function with Multiple Dimensions"</span>)</span>
-<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a><span class="co">#check final loss value as a means of verifying model </span></span>
-<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>finalLossVal <span class="op">=</span> lossVecMinibatch[<span class="bu">len</span>(lossVecMinibatch)<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>finalLossVal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="161">
-<pre><code>tensor(0.0455)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
@@ -539,46 +533,44 @@ background-size: cover;
 </div>
 </div>
 </div>
-<p>With non linearly-separable data, the loss does not ever fully reach 0, once again performing similarly to the regular perceptron. Thus we see that when k = 1, minibatch perceptron performs similarly to regular perceptron.</p>
-</section>
-<section id="k-10" class="level3">
-<h3 class="anchored" data-anchor-id="k-10">K = 10</h3>
-<div id="cell-30" class="cell" data-execution_count="162">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> perceptron_data() </span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">12345</span>) </span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Perceptron() </span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>opt <span class="op">=</span> PerceptronOptimizer(p)</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>loss <span class="op">=</span> <span class="fl">1.0</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>lossVecMinibatch <span class="op">=</span> []</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> X.size()[<span class="dv">0</span>]</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">1000</span>):</span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    loss <span class="op">=</span> p.loss(X, y) </span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    lossVecMinibatch.append(loss)</span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    ix <span class="op">=</span> torch.randperm(X.size(<span class="dv">0</span>))[:k]</span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    xSubmatrix <span class="op">=</span> X[ix]</span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>    ySubmatrix <span class="op">=</span> y[ix]</span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># opt step with the random submatrix</span></span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>    opt.step(xSubmatrix, ySubmatrix)</span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-whitegrid'</span>)</span>
-<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>plt.plot(lossVecMinibatch, color <span class="op">=</span> <span class="st">"slategrey"</span>)</span>
-<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>plt.scatter(torch.arange(<span class="bu">len</span>(lossVecMinibatch)), lossVecMinibatch, color <span class="op">=</span> <span class="st">"slategrey"</span>, s<span class="op">=</span><span class="dv">3</span>)</span>
-<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>labs <span class="op">=</span> plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"Perceptron Iteration (Updates Only)"</span>, ylabel <span class="op">=</span> <span class="st">"loss"</span>)</span>
-<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f"Evolution of the Loss Function with Multiple Dimensions"</span>)</span>
-<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a><span class="co">#check final loss value as a means of verifying model </span></span>
-<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>finalLossVal <span class="op">=</span> lossVecMinibatch[<span class="bu">len</span>(lossVecMinibatch)<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a>finalLossVal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="162">
-<pre><code>tensor(0.)</code></pre>
+<p>When k = 1, we can see that the mini-batch perceptron performs similarly to the regular perceptron on linearly separable data, as its loss eventually reaches 0.</p>
+<div id="cell-29" class="cell" data-execution_count="83">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> overlapPerceptronData()</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">12345</span>) </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Perceptron() </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>opt <span class="op">=</span> PerceptronOptimizer(p)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>loss <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>lossVecMinibatch <span class="op">=</span> []</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> X.size()[<span class="dv">0</span>]</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">1000</span>):</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    loss <span class="op">=</span> p.loss(X, y) </span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    lossVecMinibatch.append(loss)</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> <span class="dv">1</span> </span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    ix <span class="op">=</span> torch.randperm(X.size(<span class="dv">0</span>))[:k]</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>    xSubmatrix <span class="op">=</span> X[ix]</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>    ySubmatrix <span class="op">=</span> y[ix]</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># opt step with the random submatrix</span></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>    opt.step(xSubmatrix, ySubmatrix)</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-whitegrid'</span>)</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>plt.plot(lossVecMinibatch, color <span class="op">=</span> <span class="st">"slategrey"</span>)</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>plt.scatter(torch.arange(<span class="bu">len</span>(lossVecMinibatch)), lossVecMinibatch, color <span class="op">=</span> <span class="st">"slategrey"</span>, s<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>labs <span class="op">=</span> plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"Perceptron Iteration (Updates Only)"</span>, ylabel <span class="op">=</span> <span class="st">"loss"</span>)</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f"Evolution of the Loss Function with Multiple Dimensions"</span>)</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a><span class="co">#check final loss value as a means of verifying model </span></span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>finalLossVal <span class="op">=</span> lossVecMinibatch[<span class="bu">len</span>(lossVecMinibatch)<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>finalLossVal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="83">
+<pre><code>tensor(0.0455)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
@@ -588,53 +580,102 @@ background-size: cover;
 </div>
 </div>
 </div>
-<p>When k = 10, we can see that minibatch perceptron can still find a separating line in 2d, as its loss eventually reaches 0.</p>
+<p>With non linearly-separable data, the loss does not ever fully reach 0, once again performing similarly to the regular perceptron. Thus we see that when k = 1, minibatch perceptron performs similarly to regular perceptron.</p>
 </section>
-<section id="k-n" class="level3">
-<h3 class="anchored" data-anchor-id="k-n">K = n</h3>
-<div id="cell-33" class="cell" data-execution_count="163">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> overlapPerceptronData() </span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">12345</span>) </span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Perceptron() </span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>opt <span class="op">=</span> PerceptronOptimizer(p)</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>loss <span class="op">=</span> <span class="fl">1.0</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>lossVecMinibatch <span class="op">=</span> []</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> X.size()[<span class="dv">0</span>]</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">1000</span>):</span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    loss <span class="op">=</span> p.loss(X, y)</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    lossVecMinibatch.append(loss)</span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> n</span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>    ix <span class="op">=</span> torch.randperm(X.size(<span class="dv">0</span>))[:k]</span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>    xSubmatrix <span class="op">=</span> X[ix]</span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>    ySubmatrix <span class="op">=</span> y[ix]</span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># opt step with the random submatrix</span></span>
-<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>    opt.step(xSubmatrix, ySubmatrix)</span>
-<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-whitegrid'</span>)</span>
-<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>plt.plot(lossVecMinibatch, color <span class="op">=</span> <span class="st">"slategrey"</span>)</span>
-<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>plt.scatter(torch.arange(<span class="bu">len</span>(lossVecMinibatch)), lossVecMinibatch, color <span class="op">=</span> <span class="st">"slategrey"</span>, s<span class="op">=</span><span class="dv">3</span>)</span>
-<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>labs <span class="op">=</span> plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"Perceptron Iteration (Updates Only)"</span>, ylabel <span class="op">=</span> <span class="st">"loss"</span>)</span>
-<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f"Evolution of the Loss Function with Multiple Dimensions"</span>)</span>
-<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a><span class="co">#check final loss value as a means of verifying model </span></span>
-<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a>finalLossVal <span class="op">=</span> lossVecMinibatch[<span class="bu">len</span>(lossVecMinibatch)<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a>finalLossVal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="163">
-<pre><code>tensor(0.0576)</code></pre>
+<section id="k-10" class="level3">
+<h3 class="anchored" data-anchor-id="k-10">K = 10</h3>
+<div id="cell-32" class="cell" data-execution_count="84">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> perceptron_data() </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">12345</span>) </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Perceptron() </span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>opt <span class="op">=</span> PerceptronOptimizer(p)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>loss <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>lossVecMinibatch <span class="op">=</span> []</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> X.size()[<span class="dv">0</span>]</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">1000</span>):</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    loss <span class="op">=</span> p.loss(X, y) </span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    lossVecMinibatch.append(loss)</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    ix <span class="op">=</span> torch.randperm(X.size(<span class="dv">0</span>))[:k]</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    xSubmatrix <span class="op">=</span> X[ix]</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>    ySubmatrix <span class="op">=</span> y[ix]</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># opt step with the random submatrix</span></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>    opt.step(xSubmatrix, ySubmatrix)</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-whitegrid'</span>)</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>plt.plot(lossVecMinibatch, color <span class="op">=</span> <span class="st">"slategrey"</span>)</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>plt.scatter(torch.arange(<span class="bu">len</span>(lossVecMinibatch)), lossVecMinibatch, color <span class="op">=</span> <span class="st">"slategrey"</span>, s<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>labs <span class="op">=</span> plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"Perceptron Iteration (Updates Only)"</span>, ylabel <span class="op">=</span> <span class="st">"loss"</span>)</span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f"Evolution of the Loss Function with Multiple Dimensions"</span>)</span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a><span class="co">#check final loss value as a means of verifying model </span></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>finalLossVal <span class="op">=</span> lossVecMinibatch[<span class="bu">len</span>(lossVecMinibatch)<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>finalLossVal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="84">
+<pre><code>tensor(0.)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
 <p><img src="index_files/figure-html/cell-16-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>When k = 10, we can see that minibatch perceptron can still find a separating line in 2d, as its loss eventually reaches 0.</p>
+</section>
+<section id="k-n" class="level3">
+<h3 class="anchored" data-anchor-id="k-n">K = n</h3>
+<div id="cell-35" class="cell" data-execution_count="85">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> overlapPerceptronData() </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">12345</span>) </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Perceptron() </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>opt <span class="op">=</span> PerceptronOptimizer(p)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>loss <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>lossVecMinibatch <span class="op">=</span> []</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> X.size()[<span class="dv">0</span>]</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">1000</span>):</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    loss <span class="op">=</span> p.loss(X, y)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    lossVecMinibatch.append(loss)</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> n</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    ix <span class="op">=</span> torch.randperm(X.size(<span class="dv">0</span>))[:k]</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    xSubmatrix <span class="op">=</span> X[ix]</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    ySubmatrix <span class="op">=</span> y[ix]</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># opt step with the random submatrix</span></span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>    opt.step(xSubmatrix, ySubmatrix)</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-whitegrid'</span>)</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>plt.plot(lossVecMinibatch, color <span class="op">=</span> <span class="st">"slategrey"</span>)</span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>plt.scatter(torch.arange(<span class="bu">len</span>(lossVecMinibatch)), lossVecMinibatch, color <span class="op">=</span> <span class="st">"slategrey"</span>, s<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>labs <span class="op">=</span> plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"Perceptron Iteration (Updates Only)"</span>, ylabel <span class="op">=</span> <span class="st">"loss"</span>)</span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f"Evolution of the Loss Function with Multiple Dimensions"</span>)</span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a><span class="co">#check final loss value as a means of verifying model </span></span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a>finalLossVal <span class="op">=</span> lossVecMinibatch[<span class="bu">len</span>(lossVecMinibatch)<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>finalLossVal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="85">
+<pre><code>tensor(0.0576)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-17-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
