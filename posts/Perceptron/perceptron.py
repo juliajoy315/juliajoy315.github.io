@@ -50,7 +50,7 @@ class LinearModel:
         #get the scores from prev funct
         scores = self.score(X)
 
-        #assigns 1 if score>=0.5, 0 if <0.5
+        #assigns 1 if score>= threshold 0, 0 otherwise
         y_hat = torch.where(scores >= threshold, 1.0, 0.0)
 
         return y_hat
