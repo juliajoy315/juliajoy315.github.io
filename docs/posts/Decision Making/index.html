@@ -8,7 +8,6 @@
 
 <meta name="author" content="Julia Joy">
 <meta name="dcterms.date" content="2024-03-31">
-<meta name="description" content="Blog Post 5">
 
 <title>My Awesome CSCI 0451 Blog - Optimal Decision Making</title>
 <style>
@@ -169,12 +168,7 @@ background-size: cover;
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Optimal Decision Making</h1>
-                  <div>
-        <div class="description">
-          Blog Post 5
-        </div>
-      </div>
-                </div>
+                      </div>
   </div>
     
   
@@ -396,19 +390,16 @@ Cross-validation scores: [0.83751911 0.83380651 0.83358812 0.82459589 0.83355177
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#SHOULD FIRST ADD IN THE RESULTS OF MY MODEL INTO A NEW </span><span class="al">TEST</span><span class="co"> DATA SET, evaluateModelData</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Is it more difficult for people in certain age groups to access credit under your proposed system?</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>ageCategory <span class="op">=</span> pd.cut(df_test[<span class="st">'person_age'</span>], bins<span class="op">=</span>[<span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>])</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>ageCatCounts <span class="op">=</span> df_test.groupby(ageCategory)[<span class="st">'loan_status'</span>].count()</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>ageCatApproved <span class="op">=</span> df_test.groupby(ageCategory)[<span class="st">'loan_status'</span>].mean()</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>ageCategory <span class="op">=</span> pd.cut(df_test[<span class="st">'person_age'</span>], bins<span class="op">=</span>[<span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>])</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>ageCatCounts <span class="op">=</span> df_test.groupby(ageCategory)[<span class="st">'loan_status'</span>].count()</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>ageCatApproved <span class="op">=</span> df_test.groupby(ageCategory)[<span class="st">'loan_status'</span>].mean()</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Is it more difficult for people to get loans in order to pay for medical expenses? How does this compare with the actual rate of default in that group? What about people seeking loans for business ventures or education?</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>approvalsByLI <span class="op">=</span> df_test.groupby(<span class="st">'loan_intent'</span>)[<span class="st">'NEWCOLUMN'</span>].mean() </span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>defaultRates <span class="op">=</span> df_test.groupby(<span class="st">'loan_intent'</span>)[<span class="st">'NEWCOLUMN'</span>].mean()</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co">#How does a person’s income level impact the ease with which they can access credit under your decision system?</span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>incomeCategory <span class="op">=</span> pd.cut(df_test[<span class="st">'person_income'</span>], bins<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">50000</span>, <span class="dv">100000</span>, <span class="dv">150000</span>, <span class="dv">200000</span>, np.inf])</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>approvalsbyInc <span class="op">=</span> df_test.groupby(incomeCategory)[<span class="st">'NEWCOLUMN'</span>].mean()  <span class="co"># Proportion of approvals by income level</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>approvalsByLI <span class="op">=</span> df_test.groupby(<span class="st">'loan_intent'</span>)[<span class="st">'NEWCOLUMN'</span>].mean() </span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>defaultRates <span class="op">=</span> df_test.groupby(<span class="st">'loan_intent'</span>)[<span class="st">'NEWCOLUMN'</span>].mean()</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>incomeCategory <span class="op">=</span> pd.cut(df_test[<span class="st">'person_income'</span>], bins<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">50000</span>, <span class="dv">100000</span>, <span class="dv">150000</span>, <span class="dv">200000</span>, np.inf])</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>approvalsbyInc <span class="op">=</span> df_test.groupby(incomeCategory)[<span class="st">'NEWCOLUMN'</span>].mean()  <span class="co"># proportion of approvals by income level</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="part-g" class="level2">
 <h2 class="anchored" data-anchor-id="part-g">Part G</h2>

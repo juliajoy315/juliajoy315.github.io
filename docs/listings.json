@@ -1,0 +1,20 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/MidCourseEvals/index.html",
+      "/posts/GoalSetting/index.html",
+      "/posts/EndCourseEvals/FinalCourseEvals.html",
+      "/posts/MedicalBiasJLS/PostHomePage.html",
+      "/posts/Regression/index.html",
+      "/posts/Decision Making/index.html",
+      "/posts/Perceptron/index.html",
+      "/posts/WIDS Conference/index.html",
+      "/posts/Racial Bias/index.html",
+      "/posts/Palmer Penguins/index.html",
+      "/posts/MedicalBiasJLS/DataCleaning.html",
+      "/posts/MedicalBiasJLS/ModelDoc.html",
+      "/posts/MedicalBiasJLS/AnalysisDoc.html"
+    ]
+  }
+]
